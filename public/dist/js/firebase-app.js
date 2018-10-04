@@ -46,17 +46,15 @@ $(document).ready(function(){
   function createUser(event) {
     var email = $('#inputEmail-signup').val();
     var password = $('#inputPassword-signup').val();
-    var firstName = $('#name-signup').val();
-    var lastName = $('#last-name-signup').val();
     var targetId = event.target.id;
   
     firebase.auth().createUserWithEmailAndPassword(email, password)    
       .then(function(response) {
         var USER_UID = response.user.uid;
-        createUserData(USER_UID, firstName, lastName, email);
+        createUserData(USER_UID);
       })
       .catch(function(error) {
-        showErrorMessage(error, targetId);
+        showErrorMessage(error);
       }
     );
   }
@@ -69,23 +67,42 @@ $(document).ready(function(){
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then(function(response) {
         var USER_UID = response.user.uid;
+        getLocation(USER_UID)
       })
       .catch(function(error) {
-        showErrorMessage(error, targetId);
+        showErrorMessage(error);
       }
     );
   }
 
 
 
-  function createUserData(USER_UID, firstName, lastName, email) {
+  function createUserData(USER_UID) {
+    var firstName = $('#name-signup').val();
+    var lastName = $('#last-name-signup').val();
     var adress = $("#inputAddress").val();
     database.ref('users/' + USER_UID).push({
-      location: adress
+      location: adress,
+      name: firstName,
+      surname: lastName
     });
   }
 
 
+  function getLocation(USER_UID) {
+    database.ref("users/" + USER_UID).once('value')
+    .then(function(snapshot) {
+      snapshot.forEach(function(childSnapshot) {
+        var childData = childSnapshot.val();
+        console.log(childData.location)
+        return childData.location;
+        
+      })
+    })
+  }
 
+  function showErrorMessage(error) {
+    console.log("Erro: " + error);
+  }
 
 });
