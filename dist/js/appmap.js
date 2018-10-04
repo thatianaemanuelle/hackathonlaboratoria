@@ -17,14 +17,20 @@ function getData(address) {
   $.ajax({
     type: 'GET',
     url, //nao precisa repetir o valor url pois tem o mesmo nome da chave
-    success: getLatLong,
+    success: getAddressData,
     error: erro
   });
 }
 
-function getLatLong(response) {
-  let latLong = response.Response.View[0].Result[0].Location.DisplayPosition;
-  console.log(latLong.Longitude);
+function getAddressData(response) {
+  let location = response.Response.View[0].Result[0].Location;
+
+  let addressData = {
+    latitude: location.DisplayPosition.Latitude,
+    longitude: location.DisplayPosition.Longitude,
+    cidade: location.Address.City
+  }
+  return addressData;
 }
 
 function erro() {
@@ -35,6 +41,8 @@ function erro() {
 
 
 function calculateRouteFromAtoB (platform) {
+  let data = getAddressData();
+
   var router = platform.getRoutingService(),
     routeRequestParams = {
       mode: 'fastest;car',
@@ -42,7 +50,7 @@ function calculateRouteFromAtoB (platform) {
       routeattributes : 'waypoints,summary,shape,legs',
       maneuverattributes: 'direction,action',
       waypoint0: '-23.5576,-46.6623',
-      waypoint1: '-23.625474,-46.6519864'
+      waypoint1: 'data.latitude,data.longitude'
     };
 
 
@@ -72,8 +80,8 @@ function onError(error) {
 
 
 
-var mapContainer = document.getElementById('map'),
-  routeInstructionsContainer = document.getElementById('panel');
+var mapContainer = document.getElementById('map');
+  // routeInstructionsContainer = document.getElementById('panel');
 
 
 var platform = new H.service.Platform({
