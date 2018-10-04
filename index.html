@@ -7,21 +7,34 @@
     <title>Hackathon</title>
     <link rel="stylesheet" href="dist/style/index.css">
     <link href="https://fonts.googleapis.com/css?family=K2D:400,700,800" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.0/mapsjs-ui.css?dp-version=1533195059" />
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
   </head>
   <body>
-    <h1 class="splash">Tempo</h1>
-    <form class="register-area">
+    <h1 class="splash display-none">Tempo</h1>
+    <!-- TELA INICIAL -->
+    <div class="initial-screen display-none">
+      <h1>Tempo</h1>
+      <button type="submit" class="initial-btn" id="initial-login-btn">Entrar</button>
+      <button type="submit" class="initial-btn" id="initial-signup-btn">Cadastrar</button>
+    </div>
+    <!-- CADASTRO -->
+    <form class="signup-area display-none">
+      <h1 class="form-title">Cadastro</h1>
       <div class="form-group">
-        <label for="username">Seu Nome</label>
-        <input type="email" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Digite seu nome">
+        <label for="username-signup">Seu Nome</label>
+        <input type="email" class="form-control" id="username-signup" aria-describedby="emailHelp" placeholder="Digite seu nome">
       </div>
       <div class="form-group">
-        <label for="inputEmail1">Email</label>
-        <input type="email" class="form-control" id="inputEmail1" aria-describedby="emailHelp" placeholder="Digite seu email">
+        <label for="inputEmail-signup">Email</label>
+        <input type="email" class="form-control" id="inputEmail-signup" aria-describedby="emailHelp" placeholder="Digite seu email">
       </div>
       <div class="form-group">
-        <label for="inputPassword">Senha</label>
-        <input type="password" class="form-control" id="inputPassword" placeholder="Senha">
+        <label for="inputPassword-signup">Senha</label>
+        <input type="password" class="form-control" id="inputPassword-signup" placeholder="Senha">
       </div>
       <div class="form-group">
         <label for="inputAddress">Endereço</label>
@@ -31,12 +44,36 @@
         <label for="inputCity">Cidade</label>
         <input type="text" class="form-control" id="inputCity" placeholder="Cidade">
       </div>
-      <button type="submit" class="btn">Submit</button>
+      <button type="submit" class="btn" id="signup-btn">Submit</button>
+    </form>
+    <!-- LOG IN -->
+    <form class="login-area display-none">
+      <h1 class="form-title">Log in</h1>
+      <div class="form-group">
+        <label for="inputEmail1">Email</label>
+        <input type="email" class="form-control" id="inputEmail1" aria-describedby="emailHelp" placeholder="Digite seu email">
+      </div>
+      <div class="form-group">
+        <label for="inputPassword">Senha</label>
+        <input type="password" class="form-control" id="inputPassword" placeholder="Senha">
+      </div>
+      <button type="submit" class="btn" id="login-btn">Submit</button>
     </form>
 
+<<<<<<< HEAD
     <div id="weather"></div>
+=======
+    <div id="map" class="" style="position:absolute; width:49%; height:100%; background:grey"></div>
+    <div id="panel" style="position:absolute; width:49%; left:51%; height:100%; background:inherit" ></div>
+    <div class="weather"></div>
+>>>>>>> 5b725e6f05b5caed0c1ec92ad80dce58a30722ab
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"></script>
-  <script src="dist/js/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="dist/js/app.js"></script>
+    <script src="dist/js/firebase-app.js"></script>
+    <script src="dist/js/appmap.js"></script>
   </body>
 </html>
+
+
+

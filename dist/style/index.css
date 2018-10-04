@@ -5,9 +5,15 @@ body {
   font-size: 18px;
 }
 
+h1 {
+  color: rgb(224, 80, 61);
+}
+
 .splash {
   background-color: rgb(224, 80, 61);
+  color: white;
   position: fixed;
+  margin: 0px;
   top: 0%;
   left: 0%;
   width: 100%;
@@ -16,15 +22,44 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 100;
-  display: none;
 }
 
-.register-area {
+.initial-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20vh;
+}
+
+.initial-btn {
+  background-color: rgb(224, 80, 61);
+  border-radius: 15px;
+  color: white;
+  font-size: 18px;
+  align-self: center;
+  margin-right: 10px;
+  margin-top: 20px;
+  width: 150px;
+  height: 40px;
+}
+
+.signup-area {
   display: flex;
   flex-direction: column;
   justify-content: center;
   color: rgb(150, 52, 39);
-  display: none;
+}
+
+.login-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgb(150, 52, 39);
+}
+
+.form-title {
+  margin-left: 10px;
 }
 
 .form-group {
@@ -40,7 +75,7 @@ label {
 .form-control {
   border: 1px rgb(150, 52, 39) solid;
   border-radius: 10px;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .btn {
@@ -51,4 +86,12 @@ label {
   align-self: flex-end;
   margin-right: 10px;
   width: 100px;
+  height: 40px;
+}
+
+
+
+
+.display-none {
+  display: none;
 }
