@@ -78,6 +78,13 @@ $(document).ready(function(){
 
 
 
+  function createUserData(USER_UID, firstName, lastName, email) {
+    var adress = $("#inputAddress").val();
+    database.ref('users/' + USER_UID).push({
+      location: adress
+    });
+  }
+
 
 
 
