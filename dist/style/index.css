@@ -7,7 +7,9 @@ body {
 
 .splash {
   background-color: rgb(224, 80, 61);
+  color: white;
   position: fixed;
+  margin: 0px;
   top: 0%;
   left: 0%;
   width: 100%;
@@ -19,12 +21,24 @@ body {
   display: none;
 }
 
-.register-area {
+.signup-area {
   display: flex;
   flex-direction: column;
   justify-content: center;
   color: rgb(150, 52, 39);
-  display: none;
+  /* display: none; */
+}
+
+.login-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgb(150, 52, 39);
+  /* display: none; */
+}
+
+.form-title {
+  margin-left: 10px;
 }
 
 .form-group {
@@ -40,7 +54,7 @@ label {
 .form-control {
   border: 1px rgb(150, 52, 39) solid;
   border-radius: 10px;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .btn {
@@ -51,4 +65,5 @@ label {
   align-self: flex-end;
   margin-right: 10px;
   width: 100px;
+  height: 40px;
 }

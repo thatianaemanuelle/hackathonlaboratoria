@@ -18,6 +18,7 @@ $(document).ready(function(){
 
   }
 
+
     return createAll(weatherList);
 
 });

@@ -10,7 +10,8 @@
   </head>
   <body>
     <h1 class="splash">Tempo</h1>
-    <form class="register-area">
+    <form class="signup-area">
+      <h1 class="form-title">Cadastro</h1>
       <div class="form-group">
         <label for="username">Seu Nome</label>
         <input type="email" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Digite seu nome">
@@ -31,11 +32,23 @@
         <label for="inputCity">Cidade</label>
         <input type="text" class="form-control" id="inputCity" placeholder="Cidade">
       </div>
-      <button type="submit" class="btn">Submit</button>
+      <button type="submit" class="btn" id="signup-btn">Submit</button>
+    </form>
+    <form class="login-area">
+      <h1 class="form-title">Log in</h1>
+      <div class="form-group">
+        <label for="inputEmail1">Email</label>
+        <input type="email" class="form-control" id="inputEmail1" aria-describedby="emailHelp" placeholder="Digite seu email">
+      </div>
+      <div class="form-group">
+        <label for="inputPassword">Senha</label>
+        <input type="password" class="form-control" id="inputPassword" placeholder="Senha">
+      </div>
+      <button type="submit" class="btn" id="login-btn">Submit</button>
     </form>
   </body>
   <div class="weather"></div>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"></script>
-  <script rel="stylesheet" href="dist/js/app.js"></script>
+  <script src="dist/js/app.js"></script>
 </html>
