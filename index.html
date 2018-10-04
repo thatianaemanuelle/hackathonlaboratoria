@@ -14,8 +14,15 @@
     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
   </head>
   <body>
-    <h1 class="splash">Tempo</h1>
-    <form class="signup-area">
+    <h1 class="splash display-none">Tempo</h1>
+    <!-- TELA INICIAL -->
+    <div class="initial-screen display-none">
+      <h1>Tempo</h1>
+      <button type="submit" class="initial-btn" id="initial-login-btn">Entrar</button>
+      <button type="submit" class="initial-btn" id="initial-signup-btn">Cadastrar</button>
+    </div>
+    <!-- CADASTRO -->
+    <form class="signup-area display-none">
       <h1 class="form-title">Cadastro</h1>
       <div class="form-group">
         <label for="username-signup">Seu Nome</label>
@@ -39,7 +46,8 @@
       </div>
       <button type="submit" class="btn" id="signup-btn">Submit</button>
     </form>
-    <form class="login-area">
+    <!-- LOG IN -->
+    <form class="login-area display-none">
       <h1 class="form-title">Log in</h1>
       <div class="form-group">
         <label for="inputEmail1">Email</label>
@@ -51,7 +59,9 @@
       </div>
       <button type="submit" class="btn" id="login-btn">Submit</button>
     </form>
-    <div id="map" style="position:absolute; width:49%; height:100%; background:grey"></div>
+
+    <div id="weather"></div>
+    <div id="map" class="" style="position:absolute; width:49%; height:100%; background:grey"></div>
     <!-- <div id="panel" style="position:absolute; width:49%; left:51%; height:100%; background:inherit" ></div> -->
     <div class="weather"></div>
 
