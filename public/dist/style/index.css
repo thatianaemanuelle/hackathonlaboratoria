@@ -9,6 +9,11 @@ h1 {
   color: rgb(224, 80, 61);
 }
 
+.w-a {
+  display: flex;
+  flex-direction: row;
+}
+
 .search {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -17,12 +22,12 @@ h1 {
 
 #search-txt {
   font-size: 18px;
-  
+  width: 100px;
 }
 
 #search-btn {
   font-size: 18px;
-  
+  color: rgb(224, 80, 61);
 }
 
 .splash {

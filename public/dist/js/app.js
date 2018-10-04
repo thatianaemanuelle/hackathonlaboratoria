@@ -13,12 +13,11 @@ function createAll(weatherListData){
    
    
    $('#weather').append(`
-   
-   <h1>Temperatura Agora: ${diaAtual}</h1>
-   <h3>Temperatura mínima: ${tempMin}</h3>
-   <h3>Temperatura máxima: ${tempMax}</h3>
-   <h2> Descrição: ${description}</h2>`);     
-    
+
+  <h3>Temperatura.: ${diaAtual} °C</h3>
+  <h3>Mín.: ${tempMin} °C</h3>
+  <h3>Máx.: ${tempMax} °C</h3>
+  <h3>  ${description}</h3>`);
 
 
 }
