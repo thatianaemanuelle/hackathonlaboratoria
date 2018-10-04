@@ -1,3 +1,10 @@
+body {
+  margin: 0 auto;
+  height: 100%;
+  font-family: 'K2D', sans-serif;
+  font-size: 24px;
+}
+
 .splash {
   background-color: #cccccc;
   position: fixed;
@@ -9,4 +16,38 @@
   justify-content: center;
   align-items: center;
   z-index: 100;
+  display: none;
+}
+
+.register-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  display: none;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 10px;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+.form-control {
+  border: 1px gray solid;
+  border-radius: 10px;
+  font-size: 18px;
+
+}
+
+.btn {
+  background-color: rgb(224, 80, 61);
+  border-radius: 15px;
+  color: white;
+  font-size: 18px;
+  margin-right: 0px;
+  width: 48%;
 }
