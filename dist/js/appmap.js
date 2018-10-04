@@ -1,3 +1,39 @@
+$(document).ready(() => {
+  $("#search-btn").click(getAddress);
+});
+
+function getAddress(event) {
+  event.preventDefault();
+  let address = $('#search-txt').val();
+  getData(address);
+}
+
+function getData(address) {
+  event.preventDefault();
+
+  const url = `https://geocoder.api.here.com/6.2/geocode.json?app_id=X0zWFGGYgpM2le8QhIXr&app_code=zneu_02aXYwVwhdfoMhlEQ&searchtext=${address}`;
+
+  /* Acessar API com Ajax */
+  $.ajax({
+    type: 'GET',
+    url, //nao precisa repetir o valor url pois tem o mesmo nome da chave
+    success: getLatLong,
+    error: erro
+  });
+}
+
+function getLatLong(response) {
+  let latLong = response.Response.View[0].Result[0].Location.DisplayPosition;
+  console.log(latLong.Longitude);
+}
+
+function erro() {
+  alert('Fail :(');
+}
+
+
+
+
 function calculateRouteFromAtoB (platform) {
   var router = platform.getRoutingService(),
     routeRequestParams = {
@@ -174,6 +210,5 @@ function addManueversToPanel(route){
 
 
 }
-
 
 calculateRouteFromAtoB (platform);
