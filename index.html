@@ -7,6 +7,11 @@
     <title>Hackathon</title>
     <link rel="stylesheet" href="dist/style/index.css">
     <link href="https://fonts.googleapis.com/css?family=K2D:400,700,800" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.0/mapsjs-ui.css?dp-version=1533195059" />
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
   </head>
   <body>
     <h1 class="splash">Tempo</h1>
@@ -33,10 +38,12 @@
       </div>
       <button type="submit" class="btn">Submit</button>
     </form>
-
+    <div id="map" style="position:absolute; width:49%; height:100%; background:grey"></div>
+    <div id="panel" style="position:absolute; width:49%; left:51%; height:100%; background:inherit" ></div>
     <div class="weather"></div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"></script>
-  <script src="dist/js/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="dist/js/app.js"></script>
+    <script src="dist/js/appmap.js"></script>
   </body>
 </html>
