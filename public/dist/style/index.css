@@ -5,6 +5,10 @@ body {
   font-size: 18px;
 }
 
+.vovo {
+  color: rgb(224, 80, 61);
+}
+
 h1 {
   color: rgb(224, 80, 61);
 }
@@ -22,7 +26,7 @@ h1 {
 
 #search-txt {
   font-size: 18px;
-  width: 100px;
+  width: 300px;
 }
 
 #search-btn {

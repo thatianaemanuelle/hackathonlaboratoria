@@ -5,11 +5,11 @@ let CIDADE = 0;
 
 $(document).ready(() => {
   $('#search-btn').click(getAddress);
-  $("#weather").show();
 });
 
 function getAddress(event) {
   event.preventDefault();
+  $(".w-a").show();
   let address = $('#search-txt').val();
   getData(address);
 }
