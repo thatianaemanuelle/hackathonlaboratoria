@@ -37,6 +37,7 @@ $(document).ready(function(){
     $(".login-area").hide();
     $("#map").show();
     $(".weather").show();
+    userAuthentication(event);
 
     console.log("entrou")
   }
@@ -53,7 +54,21 @@ $(document).ready(function(){
       .then(function(response) {
         var USER_UID = response.user.uid;
         createUserData(USER_UID, firstName, lastName, email);
-        window.location = 'main.html?id=' + response.user.uid;
+      })
+      .catch(function(error) {
+        showErrorMessage(error, targetId);
+      }
+    );
+  }
+
+  function userAuthentication(event) {
+    var targetId = event.target.id;
+    var email = $('#inputEmail1').val();
+    var password = $('#inputPassword').val();
+  
+    firebase.auth().signInWithEmailAndPassword(email, password)
+      .then(function(response) {
+        var USER_UID = response.user.uid;
       })
       .catch(function(error) {
         showErrorMessage(error, targetId);
