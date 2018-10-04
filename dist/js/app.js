@@ -3,22 +3,9 @@ $(document).ready(function(){
     .then(function(response) { return response.json(); })
     .then(function(data) { createAll(weathers.list) });
 
-
-
-  function createAll(weatherList) {
-      $('#weather').html('');
-
-         $.each(weatherArray, function( weathers){
-             $('<img>')
-             .attr('', weathers.list)
-             .attr('', weathers[0])
-             .addClass(weatherToday)
-             .appendTo('#weather');
-         })
-
-  }
-
-
-    return createAll(weatherList);
-
-});
+    var weatherToday = [];
+    for (i = 0;i < weather.length;i++) {
+      weatherList = weather[i]['list'];
+      weatherToday.push(weatherList);
+    }
+})
