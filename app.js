@@ -3,3 +3,19 @@ $(document).ready(function(){
     .then(function(response) { return response.json(); })
     .then(function(data) { createAll(data.list) });
   });
+
+
+  function createAll(weatherList) {
+      $('#weather').html('');
+
+         $.each(weatherArray, function( weathers){
+             $('')
+             .attr('', weathers.list)
+             .attr('', weathers[0])
+             .addClass(weatherToday)
+             .appendTo('#weather');
+         })
+
+  }
+
+    return createAll(weatherList);
