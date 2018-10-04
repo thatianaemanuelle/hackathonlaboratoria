@@ -1,0 +1,26 @@
+{
+  "name": "hackathonlaboratoria",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thatianaemanuelle/hackathonlaboratoria.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thatianaemanuelle/hackathonlaboratoria/issues"
+  },
+  "homepage": "https://github.com/thatianaemanuelle/hackathonlaboratoria#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "firebase": "^5.5.2",
+    "path": "^0.12.7",
+    "tools": "0.0.0"
+  }
+}
