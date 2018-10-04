@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    fetch("https://api.openweathermap.org/data/2.5/forecast?q=campinas,br&APPID=fe9fa986796faa87ef8b7a803ed0197d&units=metric&lang=pt")
+    fetch("https://api.openweathermap.org/data/2.5/forecast?q=sao paulo,br&APPID=fe9fa986796faa87ef8b7a803ed0197d&units=metric&lang=pt")
     .then(function(response) { return response.json(); })
     .then(function(data) {createAll(data.list) });
   
@@ -15,7 +15,7 @@ function createAll(weatherListData){
    $('#weather').append(`
    
    <h1>Temperatura Agora: ${diaAtual}</h1>
-   <h3>Temperatura mínima: ${tempMin}</h3><br>
+   <h3>Temperatura mínima: ${tempMin}</h3>
    <h3>Temperatura máxima: ${tempMax}</h3>
    <h2> Descrição: ${description}</h2>`);     
     

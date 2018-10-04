@@ -3,6 +3,8 @@ var database = firebase.database();
 
 $(document).ready(function(){
 
+  $("#map").hide();
+
   $('.splash').delay('2000').fadeOut('slow');
 
   $('#initial-login-btn').on('click', loginScreen);
@@ -37,6 +39,7 @@ $(document).ready(function(){
     $(".login-area").hide();
     $("#map").show();
     $(".weather").show();
+    $(".search").show();
     userAuthentication(event);
 
     console.log("entrou")

@@ -9,6 +9,22 @@ h1 {
   color: rgb(224, 80, 61);
 }
 
+.search {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+#search-txt {
+  font-size: 18px;
+  
+}
+
+#search-btn {
+  font-size: 18px;
+  
+}
+
 .splash {
   background-color: rgb(224, 80, 61);
   color: white;

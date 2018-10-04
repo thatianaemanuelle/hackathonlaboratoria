@@ -1,5 +1,11 @@
+let LAT = 0;
+let LONG = 0;
+let CIDADE = 0;
+
+
 $(document).ready(() => {
-  $("#search-btn").click(getAddress);
+  $('#search-btn').click(getAddress);
+  $("#weather").show();
 });
 
 function getAddress(event) {
@@ -17,41 +23,39 @@ function getData(address) {
   $.ajax({
     type: 'GET',
     url, //nao precisa repetir o valor url pois tem o mesmo nome da chave
-    success: getAddressData,
+    success: getLatLong,
     error: erro
   });
 }
 
-function getAddressData(response) {
-  let location = response.Response.View[0].Result[0].Location;
+function getLatLong(response) {
+  console.log(response);
+  LAT = response.Response.View[0].Result[0].Location.DisplayPosition.Latitude;
+  LONG = response.Response.View[0].Result[0].Location.DisplayPosition.Longitude;
+  CIDADE = response.Response.View[0].Result[0].Location.Address.City;
+  console.log(LAT, LONG, CIDADE);
+  calculateRouteFromAtoB (platform);
 
-  let addressData = {
-    latitude: location.DisplayPosition.Latitude,
-    longitude: location.DisplayPosition.Longitude,
-    cidade: location.Address.City
-  }
-  return addressData;
 }
+
 
 function erro() {
   alert('Fail :(');
 }
 
 
-
-
 function calculateRouteFromAtoB (platform) {
-  let data = getAddressData();
-
   var router = platform.getRoutingService(),
     routeRequestParams = {
       mode: 'fastest;car',
       representation: 'display',
       routeattributes : 'waypoints,summary,shape,legs',
       maneuverattributes: 'direction,action',
-      waypoint0: '-23.5576,-46.6623',
-      waypoint1: 'data.latitude,data.longitude'
+      waypoint0: `${LAT},${LONG}`,
+      waypoint1: '-23.625474,-46.6519864'
     };
+
+    console.log(routeRequestParams);
 
 
   router.calculateRoute(
@@ -67,9 +71,9 @@ function onSuccess(result) {
   addRouteShapeToMap(route);
   addManueversToMap(route);
 
-  addWaypointsToPanel(route.waypoint);
-  addManueversToPanel(route);
-  addSummaryToPanel(route.summary);
+  // addWaypointsToPanel(route.waypoint);
+  // addManueversToPanel(route);
+  // addSummaryToPanel(route.summary);
 
 }
 
@@ -80,8 +84,8 @@ function onError(error) {
 
 
 
-var mapContainer = document.getElementById('map');
-  // routeInstructionsContainer = document.getElementById('panel');
+var mapContainer = document.getElementById('map'),
+  routeInstructionsContainer = document.getElementById('panel');
 
 
 var platform = new H.service.Platform({
@@ -215,8 +219,4 @@ function addManueversToPanel(route){
       nodeOL.appendChild(li);
     }
   }
-
-
 }
-
-calculateRouteFromAtoB (platform);

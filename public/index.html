@@ -19,10 +19,10 @@
 
   </head>
   <body>
-    <h1 class="splash">Tempo</h1>
+    <h1 class="splash">Vovó do Tempo</h1>
     <!-- TELA INICIAL -->
     <div class="initial-screen">
-      <h1>Tempo</h1>
+      <h1>Vovó do Tempo</h1>
       <button type="submit" class="initial-btn" id="initial-login-btn">Entrar</button>
       <button type="submit" class="initial-btn" id="initial-signup-btn">Cadastrar</button>
     </div>
@@ -65,9 +65,21 @@
       <button type="submit" class="btn" id="login-btn">Submit</button>
     </form>
 
-    <div id="map" class="display-none" style="position:absolute; width:49%; height:100%; background:grey"></div>
+    <div class="search display-none">
+      <input id="search-txt" type="text" placeholder="Digite seu local">
+      <input id="search-btn" type="button" value="Buscar">
+    </div>
 
-    <div class="weather"></div>
+  
+
+    <div id="map"  style="position:absolute; width:100%; height:250px; background:grey"></div>
+
+    <div style="height:250px"></div>
+
+    <div id="weather"></div>
+
+   
+    
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"></script>
